@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif; /* Keep your chosen font */
+    background-image: url('./Images/7892734.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    color: #4B0082; /* Darker purple for text */
+}
+
+.editor {
+    width: 80%;
+    height: 100vh;
+    background-color: #ffffff; /* White background for the editor */
+    padding: 20px; /* Add padding for spacing */
+    border-left: 1px solid #e0e0e0; /* Soft border on the left */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.editor h1 {
+    font-size: 2rem; /* Larger font for headings */
+    color: #DDA0DD; /* Use your theme color for headings */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.editor h2 {
+    font-size: 1.5rem; /* Secondary headings */
+    color: #6A5ACD; /* Slate blue for subheadings */
+    margin-bottom: 8px; /* Space below subheading */
+}
+
+.editor p {
+    font-size: 1rem; /* Base font size */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #333; /* Dark gray text color */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.editor textarea {
+    resize: none; /* Disable resizing */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 10px; /* Padding inside textarea */
+    border: 1px solid #ccc; /* Soft border */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Karla', sans-serif; /* Use a clean font */
+    font-size: 1rem; /* Font size for text area */
+    color: #333; /* Text color */
+    background-color: #ffffff; /* White background for text area */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+}
+
+.editor textarea:focus {
+    outline: none; /* Remove default outline */
+    border-color: #DDA0DD; /* Highlight border color */
+    box-shadow: 0 0 5px rgba(221, 160, 221, 0.5); /* Glow effect */
+}
+
+button:focus {
+    outline: none;
+}
+
+.ql-editor p,
+.ql-editor.ql-blank::before {
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+.pane {
+    overflow-y: auto;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for sidebar */
+    border-right: 1px solid #ccc; /* Subtle border */
+}
+
+.sidebar--header {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between */
+    align-items: center;
+    padding: 1em; /* Add padding */
+}
+
+.sidebar--header > h3 {
+    font-size: 1.75rem;
+    color: #6A5ACD; /* Slate blue for header */
+}
+
+.new-note {
+    cursor: pointer;
+    background-color: #DDA0DD; /* Theme color */
+    border: none;
+    color: white;
+    border-radius: 5px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Add padding */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+.new-note:hover {
+    background-color: #CDA0CC; /* Slightly darker on hover */
+}
+
+.first-note {
+    cursor: pointer;
+    background-color: #DDA0DD; /* Theme color */
+    border: none;
+    color: white;
+    border-radius: 5px; /* Rounded corners */
+    padding: 1rem;
+}
+
+.title {
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+.title:hover {
+    background-color: rgba(221, 160, 221, 0.5); /* Light theme color on hover */
+}
+
+.note-summary:not(:last-of-type) {
+    border-bottom: 1px solid lightgray;
+}
+
+.text-snippet {
+    padding-inline: 5px;
+    font-size: 0.9rem; /* Slightly larger font */
+    font-weight: 400;
+    line-height: 1.5rem; /* Improved line height */
+    color: #4A4E74; /* Main text color */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.selected-note {
+    background-color: #6A5ACD; /* Selected note background */
+}
+
+.selected-note .text-snippet {
+    color: white; /* Text color for selected note */
+    font-weight: 700; /* Bold text */
+}
+
+.no-notes {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F8FF; /* Light background for no notes */
+    color: #DDA0DD; /* Use theme color for text */
+}
+
+.delete-btn {
+    display: none; /* Initially hidden */
+    background: none;
+    border: none;
+    cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.title:hover > .delete-btn {
+    display: block; /* Show on hover */
+}
+
+.trash-icon {
+    cursor: pointer; /* Pointer cursor for icon */
+    color: red; /* Set the icon color to red */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.title:hover > .delete-btn:hover .trash-icon {
+    color: darkred; /* Darker red on hover for effect */
+}
+
+/* Adjust the trash icon styles if needed */
+.gg-trash {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 10px;
+    height: 12px;
+    border: 2px solid transparent;
+    margin-top: 4px;
+}
+
+.gg-trash::after,
+.gg-trash::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.gg-trash::after {
+    background: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px;
+}
+
+.gg-trash::before {
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -2px;
+}
+
+/* Add gutter styles if necessary */
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,...'); /* Keep your original image */
+}
+
+.gutter.gutter-horizontal:hover {
+    cursor: col-resize;
+}
+
+.split {
+    display: flex;
+}
