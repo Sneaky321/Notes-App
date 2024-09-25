@@ -81,3 +81,6 @@ coverage/
 Thumbs.db
 .tern-port
 .vscode-test
+
+# Local Netlify folder
+.netlify
