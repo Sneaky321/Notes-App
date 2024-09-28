@@ -22,14 +22,15 @@ export default function Sidebar(props) {
         <section className="pane sidebar">
             <div className="sidebar--header">
             <h3>
-  <img src="Images/circle.png" alt="Notes Icon" class="avatar" />
+  <img src="../Images/circle.png" alt="Avatar" className="avatar" />
   Notes
 </h3>
 
-                <button className="new-note" onClick={props.newNote}>
-                <img src={`${import.meta.env.BASE_URL}Images/clipboard2-data.svg`} alt="Notes Icon" />
 
-                </button>
+<button className="new-note" onClick={props.newNote}>
+  <img src="../Images/clipboard2-data.svg" alt="Notes Icon" />
+</button>
+
             </div>
             {noteElements}
         </section>
