@@ -249,3 +249,15 @@ button:focus {
 .split {
     display: flex;
 }
+.avatar {
+    width: 50px; /* Adjust size of the avatar */
+    height: 50px; /* Ensure it's a perfect circle */
+    border-radius: 50%; /* Makes it a circle */
+    border: 2px solid #ddd; /* Light border around the avatar */
+    padding: 5px; /* Space inside the border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    object-fit: cover; /* Ensures image doesn’t get distorted */
+    margin-right: 10px; /* Space between avatar and the text */
+    vertical-align: middle; /* Aligns the image with text vertically */
+  }
+  
